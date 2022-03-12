@@ -6,7 +6,7 @@ The following repository provides an implementation of the Mask R-CNN[Mask R-CNN
 ## Approach
 
 ## Requirements
-The necessary requirements are specified in [requirements.txt](https://github.com/lucabnf/damage-detection/Mask_RCNN/requirements.txt). To run the following program on your own machine: 
+The necessary requirements are specified in [requirements.txt](https://github.com/lucabnf/damage-detection/blob/master/requirements.txt). To run the following program on your own machine: 
 1. Clone this repository
 2. Install dependencies
    ```bash
@@ -17,7 +17,7 @@ The necessary requirements are specified in [requirements.txt](https://github.co
     python3 setup.py install
     ``` 
 
-The training and the evaluation of the model is presented in the jupyter notebook `train_and_evaluate.ipynb`.
+The training and the evaluation of the model is presented in the jupyter notebook [train_and_evaluate.ipynp](https://github.com/lucabnf/damage-detection/blob/master/train_and_evaluate.ipynb).
 ## Results
 
 ## Insights
