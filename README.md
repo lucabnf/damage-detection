@@ -17,7 +17,7 @@ The necessary requirements are specified in [requirements.txt](https://github.co
     python3 setup.py install
     ``` 
 
-The training and the evaluation of the model is presented in the jupyter notebook [train_and_evaluate.ipynp](https://github.com/lucabnf/damage-detection/blob/master/train_and_evaluate.ipynb).
+The training and the evaluation of the model is presented in the jupyter notebook [train_and_evaluate.ipynb](https://github.com/lucabnf/damage-detection/blob/master/train_and_evaluate.ipynb).
 ## Results
 
 ## Insights
