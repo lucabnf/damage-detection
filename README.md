@@ -8,16 +8,22 @@ The following repository provides an implementation of the Mask R-CNN[Mask R-CNN
 ## Requirements
 The necessary requirements are specified in [requirements.txt](https://github.com/lucabnf/damage-detection/Mask_RCNN/requirements.txt). To run the following program on your own machine: 
 1. Clone this repository
-2. Install dependecies
-   `pip3 install -r requirements.txt`
-3. Run setup from the repository root directort
-   `python3 setup.py install`
+2. Install dependencies
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+3. Run setup from the repository root directory
+    ```bash
+    python3 setup.py install
+    ``` 
 
+The training and the evaluation of the model is presented in the jupyter notebook `train_and_evaluate.ipynb`.
 ## Results
 
 ## Insights
 
 ## Citation
+```
 @misc{matterport_maskrcnn_2017,
   title={Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow},
   author={Waleed Abdulla},
@@ -26,3 +32,4 @@ The necessary requirements are specified in [requirements.txt](https://github.co
   journal={GitHub repository},
   howpublished={\url{https://github.com/matterport/Mask_RCNN}},
 }
+```
