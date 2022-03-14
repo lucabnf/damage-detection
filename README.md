@@ -9,6 +9,7 @@ Mask R-CNN is basically an extension of Faster R-CNN. Faster R-CNN is widely use
 - These feature maps are then passed through a Region Proposal Network (RPN) which returns the candidate bounding boxes
 - We then apply a Rdgion of Interest (RoI) pooling layer on these candidate bounding boxes to bring all the candidates to the same size
 - And finally, the proposals are passed to a fully connected layer to classify and output the bounding boxes for objects
+
 In addition to pooling layer to find the RoI, Mask R-CNN generates also the segmentation mask. Once we have the RoIs based on the IoU values, we can add a mask branch to the existing architecture. This returns the segmentation mask for each region that contains an object. Basically, we predict the masks for all the objects in the image. 
 
 Mask R-CNN can be thought as a combination of a Faster R-CNN that detects objects (class + bounding box) and a Fully Convolutional Network (FCN) that does pixel-wise boundary.
