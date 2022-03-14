@@ -1,6 +1,6 @@
 
 # Vehicle damage detection with Mask R-CNN
-We are asked to create a jupyter notebook to train an image segmentation model for damage detection based on the given training data. The following repository provides an implementation of the Mask R-CNN[Mask R-CNN](https://github.com/matterport/Mask_RCNN). 
+We are asked to create a jupyter notebook to train an image segmentation model for damage detection based on the given training data. The following repository provides an implementation of the [Mask R-CNN](https://github.com/matterport/Mask_RCNN). 
 
 ## Approach
 ### Model
@@ -60,4 +60,5 @@ Although the model and its applications seem promising, a more deep and thouroug
 
 ## References
 [Mask R-CNN](https://arxiv.org/abs/1703.06870). Kaiming He, Georgia Gkioxari, Piotr Dollár, Ross Girshick, 2017
+
 [Mask R-CNN code](https://github.com/matterport/Mask_RCNN). Waleed Abdulla, 2017, Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow
