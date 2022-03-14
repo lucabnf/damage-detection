@@ -16,8 +16,13 @@ The necessary requirements are specified in [requirements.txt](https://github.co
     ```bash
     python3 setup.py install
     ``` 
+4. Download pre-trained weights on COCO dataset
+   ```bash
+   wget https://github.com/matterport/Mask_RCNN/releases/download/v1.0/mask_rcnn_coco.h5
+   ```
 
 The training and the evaluation of the model is presented in the jupyter notebook [train_and_evaluate.ipynb](https://github.com/lucabnf/damage-detection/blob/master/train_and_evaluate.ipynb).
+
 ## Results
 
 ## Insights
