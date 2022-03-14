@@ -42,16 +42,21 @@ The necessary requirements are specified in [requirements.txt](https://github.co
    wget "https://github.com/matterport/Mask_RCNN/releases/download/v1.0/mask_rcnn_coco.h5"
    ```
 
-The training and the evaluation of the model is presented in the jupyter notebook [train_and_evaluate.ipynb](https://github.com/lucabnf/damage-detection/blob/master/train_and_evaluate.ipynb).
+The training, the evaluation and some studies on the dataset and on the final weights of the model are presented in the jupyter notebook [train_and_evaluate.ipynb](https://github.com/lucabnf/damage-detection/blob/master/train_and_evaluate.ipynb).
 
 ## Results
 ![Result on test image test1.png](images/detected_damage_test1.png)
-Some damage has been correctly identified on the right front wheel, but a major scratch on the frontal car body has been not detected.
+
+Some damage has been correctly identified on the right front wheel, but a major scratch on the lowest part of the frontal car body has not been detected.
+
 ![Result on test image test2.png](images/detected_damage_test2.png)
+
 No damage has been detected, even if it was easy to spot.
 
 ## Insights
-The major drawback of this model is that it requires a lot of time to be properly trained. In our case, not enough time was available and, thus, performances show the previous statement, especially in the second picture where, probably, the color are sh 
+The major drawback of this model is that it requires a lot of time to be properly trained. The performances of our model show that the asssumptions made in section "Problem" to reduce the training time have been proven to be a bit too optimistic. The fact that no damage was identified in the second picture may be partially justisfied considering that delta between background color and vehicle damage has lower magnitude with respect to the first image: this could results in gradients less "spiky" and thus, no clear convergence is reached (considering that is combined with a small number of epochs and steps per epoch). 
+
+Although the model and its applications seem promising, a more deep and thourough training step (~ days) needs to be considered in order to make it behave well with unseen footage. Further experiments will be carried out in order to prove its validity.
 
 ## References
 [Mask R-CNN](https://arxiv.org/abs/1703.06870). Kaiming He, Georgia Gkioxari, Piotr Dollár, Ross Girshick, 2017
