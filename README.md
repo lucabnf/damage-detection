@@ -5,12 +5,12 @@ We are asked to create a jupyter notebook to train an image segmentation model f
 ## Approach
 ### Model
 Mask R-CNN is basically an extension of Faster R-CNN. Faster R-CNN is widely used for object detection tasks. For a given image, it returns the class label and bounding box coordinates for each object in the image. Faster R-CNN:
-- first uses a ConvNet to extract feature maps from the images
-- These feature maps are then passed through a Region Proposal Network (RPN) which returns the candidate bounding boxes
-- We then apply a Region of Interest (RoI) pooling layer on these candidate bounding boxes to bring all the candidates to the same size
-- And finally, the proposals are passed to a fully connected layer to classify and output the bounding boxes for objects
+- first uses a ConvNet to extract feature maps from the images;
+- these feature maps are then passed through a Region Proposal Network (RPN) which returns the candidate bounding boxes;
+- we then apply a Region of Interest (RoI) pooling layer on these candidate bounding boxes to bring all the candidates to the same size;
+- and finally, the proposals are passed to a fully connected layer to classify and output the bounding boxes for objects.
 
-In addition to pooling layer to find the RoI, Mask R-CNN generates also the segmentation mask. Once we have the RoIs based on the IoU values, we can add a mask branch to the existing architecture. This returns the segmentation mask for each region that contains an object. Basically, we predict the masks for all the objects in the image. 
+In addition to the pooling layer to find the RoI, Mask R-CNN generates also the segmentation mask. Once we have the RoIs based on the IoU values, we can add a mask branch to the existing architecture. This returns the segmentation mask for each region that contains an object. Basically, we predict the masks for all the objects in the image. 
 
 Mask R-CNN can be thought as a combination of a Faster R-CNN that detects objects (class + bounding box) and a Fully Convolutional Network (FCN) that does pixel-wise boundary.
 
@@ -54,9 +54,9 @@ Some damage has been correctly identified on the right front wheel, but a major 
 No damage has been detected, even if it was easy to spot.
 
 ## Insights
-The major drawback of this model is that it requires a lot of time to be properly trained. The performances of our model show that the asssumptions made in section "Problem" to reduce the training time have been proven to be a bit too optimistic. The fact that no damage was identified in the second picture may be partially justisfied considering that delta between background color and vehicle damage is smaller with respect to the first test image: this could results in gradients with lower magnitude and convergence in gradient descent is harder to reach (especially considering that is combined with a small number of epochs and steps per epoch). Another compromising assumption that may have been wrongly considered is the backbone network (ResNet-50 instead of ResNet-101). Once the model is trained, we can see that `bn_conv1` weights hit overflow, however resnet50 pre-trained weights already overflow even before training, so this may be a source for poor performances.  
+The major drawback of this model is that it requires a lot of time to be properly trained. The performances of our model show that the asssumptions made in section **Problem** to reduce the training time have been proven to be a bit too optimistic. The fact that no damage was identified in the second picture may be partially justisfied considering that delta between background color and vehicle damage is smaller with respect to the first test image: this could results in gradients with lower magnitude, thus convergence in gradient descent is harder to reach (especially considering that is combined with a small number of epochs and steps per epoch). Another compromising assumption that may have been wrongly considered is the backbone network (ResNet-50 instead of ResNet-101). Once the model is trained, we can see that `bn_conv1` weights hit overflow, however resnet50 pre-trained weights already overflow even before training, so this may be a source for poor performances.  
 
-Although the model and its applications seem promising and have shown great results among different domains and tasks, a more deep and thourough training step (that could take up to several days) needs to be considered in order to make it behave well with our unseen vehicle footage. Further experiments will be carried out in order to prove its validity.
+Although the model and its applications seem promising and have shown great results among different domains and tasks, a more deep and thourough training step (that could take up to several days) needs to be considered in order to have a model that behaves well with unseen vehicle footage. Further experiments will be carried out in order to prove its validity.
 
 ## References
 [Mask R-CNN](https://arxiv.org/abs/1703.06870). Kaiming He, Georgia Gkioxari, Piotr Dollár, Ross Girshick, 2017
