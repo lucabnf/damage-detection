@@ -45,8 +45,13 @@ The necessary requirements are specified in [requirements.txt](https://github.co
 The training and the evaluation of the model is presented in the jupyter notebook [train_and_evaluate.ipynb](https://github.com/lucabnf/damage-detection/blob/master/train_and_evaluate.ipynb).
 
 ## Results
+![Result on test image test1.png](images/detected_damage_test1.png)
+Some damage has been correctly identified on the right front wheel, but a major scratch on the frontal car body has been not detected.
+![Result on test image test2.png](images/detected_damage_test2.png)
+No damage has been detected, even if it was easy to spot.
 
 ## Insights
+The major drawback of this model is that it requires a lot of time to be properly trained. In our case, not enough time was available and, thus, performances show the previous statement, especially in the second picture where, probably, the color are sh 
 
 ## References
 [Mask R-CNN](https://arxiv.org/abs/1703.06870). Kaiming He, Georgia Gkioxari, Piotr Dollár, Ross Girshick, 2017
